@@ -6,4 +6,5 @@ RUN --mount=target=/mnt ["/mnt/build.sh"]
 
 FROM scratch
 COPY --from=build /certspotter /
+COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 ENTRYPOINT ["/certspotter"]
